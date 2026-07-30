@@ -1,6 +1,6 @@
 function ProcessSection() {
   return (
-    <section className="bg-[#faf7f7] py-16">
+    <section id="process-section" className="bg-[#faf7f7] py-16">
 
       <div className="max-w-7xl mx-auto px-6">
 

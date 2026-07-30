@@ -12,7 +12,7 @@ import HomeFooter from "../Home/HomeFooter";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-[#faf7f7]">
+    <div id="main-content" className="min-h-screen bg-[#faf7f7]">
 
       <HomeHeader />
       <HomeNavbar />

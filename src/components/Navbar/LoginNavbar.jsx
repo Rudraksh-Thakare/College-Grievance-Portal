@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginNavbar() {
+  const navigate = useNavigate();
+
   return (
     <nav className="bg-[#8B0D1A]">
       <div className="max-w-7xl mx-auto">
@@ -13,15 +15,15 @@ function LoginNavbar() {
           </li>
 
           <li className="border-r border-[#a52a35]">
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
+            <Link to="/" className="block px-9 py-4 hover:bg-[#730b15]">
               About the Portal
-            </a>
+            </Link>
           </li>
 
           <li className="border-r border-[#a52a35]">
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
+            <Link to="/" className="block px-9 py-4 hover:bg-[#730b15]">
               Departments
-            </a>
+            </Link>
           </li>
 
           <li className="bg-[#6b0812] border-r border-[#a52a35]">
@@ -31,15 +33,28 @@ function LoginNavbar() {
           </li>
 
           <li className="border-r border-[#a52a35]">
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
-              Guidelines
-            </a>
+            <Link to="/register" className="block px-9 py-4 hover:bg-[#730b15]">
+              Register
+            </Link>
+          </li>
+
+          <li className="border-r border-[#a52a35]">
+            <Link to="/track" className="block px-9 py-4 hover:bg-[#730b15]">
+              Track Grievance
+            </Link>
           </li>
 
           <li>
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
+            <button
+              onClick={() => {
+                const el = document.getElementById("footer-section");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+                else navigate("/");
+              }}
+              className="block px-9 py-4 hover:bg-[#730b15]"
+            >
               Contact Us
-            </a>
+            </button>
           </li>
 
         </ul>

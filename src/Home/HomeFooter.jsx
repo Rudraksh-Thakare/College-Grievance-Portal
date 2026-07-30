@@ -1,6 +1,15 @@
+import { Link, useNavigate } from "react-router-dom";
+
 function HomeFooter() {
+  const navigate = useNavigate();
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-[#870f18] text-white">
+    <footer id="footer-section" className="bg-[#870f18] text-white">
 
 
       {/* Main Footer */}
@@ -35,19 +44,30 @@ function HomeFooter() {
           <ul className="space-y-3 text-sm text-gray-200">
 
             <li>
-              About the Portal
+              <button onClick={() => scrollTo("process-section")} className="hover:underline hover:text-white transition">
+                About the Portal
+              </button>
             </li>
 
             <li>
-              Grievance Guidelines
+              <button onClick={() => scrollTo("process-section")} className="hover:underline hover:text-white transition">
+                Grievance Guidelines
+              </button>
             </li>
 
             <li>
-              Departments
+              <button onClick={() => scrollTo("department-section")} className="hover:underline hover:text-white transition">
+                Departments
+              </button>
             </li>
 
             <li>
-              FAQs
+              <button
+                onClick={() => alert("FAQs\n\nQ: How long does resolution take?\nA: Most grievances are resolved within 7–10 working days.\n\nQ: Can I submit anonymously?\nA: Yes, the Lodge Grievance form has an anonymous option.\n\nQ: How do I track my complaint?\nA: Use the reference number provided at submission on the Track page.")}
+                className="hover:underline hover:text-white transition"
+              >
+                FAQs
+              </button>
             </li>
 
           </ul>
@@ -68,19 +88,30 @@ function HomeFooter() {
           <ul className="space-y-3 text-sm text-gray-200">
 
             <li>
-              Login
+              <Link to="/login" className="hover:underline hover:text-white transition">
+                Login
+              </Link>
             </li>
 
             <li>
-              Register
+              <Link to="/register" className="hover:underline hover:text-white transition">
+                Register
+              </Link>
             </li>
 
             <li>
-              Track Grievance
+              <Link to="/track" className="hover:underline hover:text-white transition">
+                Track Grievance
+              </Link>
             </li>
 
             <li>
-              Contact Registrar
+              <button
+                onClick={() => alert("Contact the Registrar:\n📍 Registrar's Office, Main Campus Building\n📞 1800-XXX-XXXX (Toll Free)\n✉️ grievance@college.edu.in\n\nOffice Hours: Mon–Sat, 9:00 AM – 5:30 PM")}
+                className="hover:underline hover:text-white transition"
+              >
+                Contact Registrar
+              </button>
             </li>
 
           </ul>
@@ -109,7 +140,9 @@ function HomeFooter() {
             </li>
 
             <li>
-              grievance@college.edu.in
+              <a href="mailto:grievance@college.edu.in" className="hover:underline hover:text-white transition">
+                grievance@college.edu.in
+              </a>
             </li>
 
           </ul>

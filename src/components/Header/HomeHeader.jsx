@@ -1,7 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 
 function HomeHeader() {
+  const [fontSize, setFontSize] = useState("normal");
+
+  const applyFontSize = (size) => {
+    setFontSize(size);
+    const root = document.documentElement;
+    if (size === "small")  root.style.fontSize = "14px";
+    if (size === "normal") root.style.fontSize = "16px";
+    if (size === "large")  root.style.fontSize = "18px";
+  };
+
   return (
     <>
       {/* Top Bar */}
@@ -10,30 +21,61 @@ function HomeHeader() {
 
           {/* Left */}
           <div className="flex items-center gap-5">
-            <button className="hover:underline">
+            <button
+              onClick={() => {
+                const main = document.getElementById("main-content");
+                if (main) main.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="hover:underline"
+            >
               Skip to Main Content
             </button>
 
-            <button className="hover:underline">
+            <button
+              onClick={() => alert("Screen reader mode: Please use your browser's built-in accessibility tools (e.g., press F5 or enable NVDA / JAWS).")}
+              className="hover:underline"
+            >
               Screen Reader Access
             </button>
 
-            <button className="hover:underline">
+            <button
+              onClick={() => alert("Sitemap:\n• Home — /\n• Login — /login\n• Register — /register\n• Dashboard — /dashboard\n• Lodge Grievance — /lodge-grievance\n• Track Grievance — /track")}
+              className="hover:underline"
+            >
               Sitemap
             </button>
           </div>
 
           {/* Right */}
           <div className="flex items-center gap-3">
-            <button>A-</button>
-            <button>A</button>
-            <button>A+</button>
+            <button
+              onClick={() => applyFontSize("small")}
+              className={`px-1 hover:underline ${fontSize === "small" ? "font-bold underline" : ""}`}
+            >
+              A-
+            </button>
+            <button
+              onClick={() => applyFontSize("normal")}
+              className={`px-1 hover:underline ${fontSize === "normal" ? "font-bold underline" : ""}`}
+            >
+              A
+            </button>
+            <button
+              onClick={() => applyFontSize("large")}
+              className={`px-1 hover:underline ${fontSize === "large" ? "font-bold underline" : ""}`}
+            >
+              A+
+            </button>
 
             <span>|</span>
 
-            <button>English</button>
-
-            <button>हिन्दी</button>
+            <button className="hover:underline font-semibold">English</button>
+            <button
+              onClick={() => alert("हिन्दी अनुवाद जल्द ही उपलब्ध होगा। (Hindi translation coming soon.)")}
+              className="hover:underline"
+            >
+              हिन्दी
+            </button>
           </div>
 
         </div>

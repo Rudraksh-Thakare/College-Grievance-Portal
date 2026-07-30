@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-16">
 
@@ -28,29 +32,40 @@ function HeroSection() {
 
           <div className="mt-7 flex gap-4">
 
-            <button className="
-              bg-[#a91524]
-              text-white
-              px-6
-              py-3
-              text-sm
-              font-semibold
-              rounded-sm
-            ">
+            <button
+              onClick={() => navigate("/lodge-grievance")}
+              className="
+                bg-[#a91524]
+                text-white
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                rounded-sm
+                hover:bg-[#8b111c]
+                transition
+              "
+            >
               Lodge a Grievance
             </button>
 
 
-            <button className="
-              border
-              border-[#a91524]
-              text-[#8b111c]
-              px-6
-              py-3
-              text-sm
-              font-semibold
-              rounded-sm
-            ">
+            <button
+              onClick={() => navigate("/track")}
+              className="
+                border
+                border-[#a91524]
+                text-[#8b111c]
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                rounded-sm
+                hover:bg-[#a91524]
+                hover:text-white
+                transition
+              "
+            >
               Track Application Status
             </button>
 
@@ -91,7 +106,10 @@ function HeroSection() {
             font-semibold
           ">
             <span>Recent Case Activity</span>
-            <span>Live</span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block"></span>
+              Live
+            </span>
           </div>
 
 
@@ -154,12 +172,15 @@ function HeroSection() {
 
 
 
-          <div className="border-t px-5 py-3 text-xs text-center text-gray-500">
-            Have a reference number? 
+          <button
+            onClick={() => navigate("/track")}
+            className="w-full border-t px-5 py-3 text-xs text-center text-gray-500 hover:bg-gray-50 transition"
+          >
+            Have a reference number?{" "}
             <span className="text-[#8b111c] font-semibold">
-              {" "}Check status here
+              Check status here →
             </span>
-          </div>
+          </button>
 
 
         </div>

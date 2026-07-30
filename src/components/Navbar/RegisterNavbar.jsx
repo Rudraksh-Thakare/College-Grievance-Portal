@@ -13,15 +13,21 @@ function RegisterNavbar() {
           </li>
 
           <li className="border-r border-[#a52a35]">
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
+            <Link to="/" className="block px-9 py-4 hover:bg-[#730b15]">
               About the Portal
-            </a>
+            </Link>
           </li>
 
           <li className="border-r border-[#a52a35]">
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
+            <Link to="/" className="block px-9 py-4 hover:bg-[#730b15]">
               Departments
-            </a>
+            </Link>
+          </li>
+
+          <li className="border-r border-[#a52a35]">
+            <Link to="/login" className="block px-9 py-4 hover:bg-[#730b15]">
+              Login
+            </Link>
           </li>
 
           <li className="bg-[#6b0812] border-r border-[#a52a35]">
@@ -31,15 +37,15 @@ function RegisterNavbar() {
           </li>
 
           <li className="border-r border-[#a52a35]">
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
-              Guidelines
-            </a>
+            <Link to="/track" className="block px-9 py-4 hover:bg-[#730b15]">
+              Track Grievance
+            </Link>
           </li>
 
           <li>
-            <a href="#" className="block px-9 py-4 hover:bg-[#730b15]">
+            <Link to="/" className="block px-9 py-4 hover:bg-[#730b15]">
               Contact Us
-            </a>
+            </Link>
           </li>
 
         </ul>

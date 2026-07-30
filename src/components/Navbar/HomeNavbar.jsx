@@ -1,7 +1,13 @@
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function HomeNavbar() {
+  const navigate = useNavigate();
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav className="bg-[#aa1622] shadow">
       <div className="max-w-7xl mx-auto">
@@ -19,52 +25,52 @@ function HomeNavbar() {
 
           {/* About */}
           <li className="border-r border-red-800">
-            <a
-              href="#"
+            <button
+              onClick={() => scrollTo("process-section")}
               className="block px-8 py-4 hover:bg-[#7d0f17] transition"
             >
               About the Portal
-            </a>
+            </button>
           </li>
 
           {/* Departments */}
           <li className="border-r border-red-800">
-            <a
-              href="#"
+            <button
+              onClick={() => scrollTo("department-section")}
               className="block px-8 py-4 hover:bg-[#7d0f17] transition"
             >
               Departments
-            </a>
+            </button>
           </li>
 
           {/* Track */}
           <li className="border-r border-red-800">
-            <a
-              href="#"
+            <button
+              onClick={() => navigate("/track")}
               className="block px-8 py-4 hover:bg-[#7d0f17] transition"
             >
               Track Grievance
-            </a>
+            </button>
           </li>
 
           {/* Guidelines */}
           <li className="border-r border-red-800">
-            <a
-              href="#"
+            <button
+              onClick={() => scrollTo("process-section")}
               className="block px-8 py-4 hover:bg-[#7d0f17] transition"
             >
               Guidelines
-            </a>
+            </button>
           </li>
 
           {/* Contact */}
           <li>
-            <a
-              href="#"
+            <button
+              onClick={() => scrollTo("footer-section")}
               className="block px-8 py-4 hover:bg-[#7d0f17] transition"
             >
               Contact Us
-            </a>
+            </button>
           </li>
 
         </ul>

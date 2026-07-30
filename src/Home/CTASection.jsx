@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function CTASection() {
+  const navigate = useNavigate();
 
   return (
     <section className="bg-[#fff6f6] py-14">
@@ -23,6 +26,7 @@ function CTASection() {
 
           {/* Register Button */}
           <button
+            onClick={() => navigate("/register")}
             className="
             bg-[#a91524]
             text-white
@@ -42,6 +46,7 @@ function CTASection() {
 
           {/* Login Button */}
           <button
+            onClick={() => navigate("/login")}
             className="
             bg-white
             text-[#8b111c]
